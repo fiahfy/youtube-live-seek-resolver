@@ -5,9 +5,10 @@ const contentLoaded = async (tabId: number) => {
 }
 
 browser.pageAction.onClicked.addListener(async (tab) => {
-  tab.id && await browser.tabs.sendMessage(tab.id, {
-    id: 'pageAction',
-  })
+  tab.id &&
+    (await browser.tabs.sendMessage(tab.id, {
+      id: 'pageAction',
+    }))
 })
 
 browser.runtime.onMessage.addListener(async (message, sender) => {
