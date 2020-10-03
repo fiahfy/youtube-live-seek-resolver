@@ -11,6 +11,12 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     }))
 })
 
+browser.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
+  if (changeInfo.url) {
+    browser.tabs.sendMessage(tabId, { id: 'urlChanged' })
+  }
+})
+
 browser.runtime.onMessage.addListener(async (message, sender) => {
   const { id } = message
   const { tab } = sender
