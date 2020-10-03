@@ -6,7 +6,8 @@
 
 ## Features
 
-- Add browser action for resolving storage seek behavior.
+- Automatically refresh the chat on seek.
+- Browser actions allow you to reload a page that maintains the current play time.
 
 ## Screenshot
 

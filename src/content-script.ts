@@ -2,9 +2,9 @@ import { browser } from 'webextension-polyfill-ts'
 
 let ready = false
 
-const isLive = () => {
-  return !!document.querySelector('.ytp-time-display.ytp-live')
-}
+const isVideoUrl = () => new URL(location.href).pathname === '/watch'
+
+const isLive = () => !!document.querySelector('.ytp-time-display.ytp-live')
 
 const getCurrentTime = () => {
   const video = document.querySelector<HTMLVideoElement>(
@@ -14,6 +14,9 @@ const getCurrentTime = () => {
 }
 
 const reload = () => {
+  if (!isVideoUrl()) {
+    return
+  }
   const url = location.href.replace(/&t=\d+(&|$)/, '$1')
   const time = getCurrentTime()
   location.replace(`${url}&t=${time}`)
