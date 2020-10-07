@@ -1,7 +1,7 @@
 {
   "name": "youtube-live-seek-resolver",
   "description": "Chrome Extension for Resolving Storange Seek Behavior on YouTube Live",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "fiahfy",
     "email": "d.fiahfy@gmail.com",
