@@ -17,7 +17,7 @@ const reload = () => {
   if (!isVideoUrl()) {
     return
   }
-  const url = location.href.replace(/&t=\d+(&|$)/, '$1')
+  const url = location.href.replace(/&t=\w+(&|$)/, '$1')
   const time = getCurrentTime()
   location.replace(`${url}&t=${time}`)
 }
